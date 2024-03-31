@@ -10,7 +10,6 @@ type RecommendedProps = {
 };
 
 export const Recommended = ({ data }: RecommendedProps) => {
-  console.log("🚀 ~ Recommended ~ data:", data);
   const { collapsed } = useSideBar((state) => state);
   const showLabel = !collapsed && data.length > 0;
   return (

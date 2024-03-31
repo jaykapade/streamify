@@ -1,5 +1,8 @@
 import React from "react";
+
 import Navbar from "./_components/navbar";
+import Sidebar from "./_components/sidebar";
+import Container from "./_components/container";
 
 type BrowseLayoutProps = {
   children: React.ReactNode;
@@ -9,7 +12,10 @@ const BrowseLayout = ({ children }: BrowseLayoutProps) => {
   return (
     <>
       <Navbar />
-      <div className="flex h-full pt-20">{children}</div>
+      <div className="flex h-full pt-20">
+        <Sidebar />
+        <Container>{children}</Container>
+      </div>
     </>
   );
 };

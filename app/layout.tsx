@@ -5,6 +5,7 @@ import { dark } from "@clerk/themes";
 
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
             forcedTheme="dark"
             storageKey="streamify-theme"
           >
+            <Toaster theme="light" position="bottom-center" />
             {children}
           </ThemeProvider>
         </body>

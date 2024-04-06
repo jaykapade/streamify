@@ -2,9 +2,10 @@ import React from "react";
 import { redirect } from "next/navigation";
 
 import Navbar from "./_components/navbar";
+import { Sidebar } from "./_components/sidebar";
+import { Container } from "./_components/container";
 
 import { getSelfByUsername } from "@/lib/auth-service";
-import { Sidebar } from "./_components/sidebar";
 
 type CreatorLayoutProps = {
   params: {
@@ -26,7 +27,7 @@ const CreatorLayout = async ({
       <Navbar />
       <div className="flex h-full pt-20">
         <Sidebar />
-        {children}
+        <Container>{children}</Container>
       </div>
     </>
   );

@@ -10,7 +10,9 @@ import { useSideBar } from "@/store/use-sidebar";
 type FollowingProps = {
   data: (Follow & {
     following: User & {
-      stream: Stream | null;
+      stream: {
+        isLive: boolean;
+      } | null;
     };
   })[];
 };

@@ -14,6 +14,7 @@ import { ChatForm, ChatFormSkeleton } from "./chat-form";
 import { ChatList, ChatListSkeleton } from "./chat-list";
 
 import { ChatVariant, useChatSidebar } from "@/store/use-chat-sidebar";
+import ChatCommunity from "./chat-community";
 
 type ChatProps = {
   hostName: string;
@@ -85,12 +86,11 @@ export const Chat = ({
         </>
       )}
       {variant === ChatVariant.COMMUNITY && (
-        // <ChatCommunity
-        //   viewerName={viewerName}
-        //   hostName={hostName}
-        //   isHidden={isHidden}
-        // />
-        <>Community</>
+        <ChatCommunity
+          viewerName={viewerName}
+          hostName={hostName}
+          isHidden={isHidden}
+        />
       )}
     </div>
   );

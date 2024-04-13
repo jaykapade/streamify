@@ -13,7 +13,7 @@ export const createViewerToken = async (hostIdentity: string) => {
     self = await getSelf();
   } catch (error) {
     const id = uuid();
-    const username = `guest#${id}`;
+    const username = `guest#${id}`.slice(0, 10);
     self = {
       id,
       username,

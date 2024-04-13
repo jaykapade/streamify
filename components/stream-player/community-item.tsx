@@ -22,9 +22,10 @@ const CommunityItem = ({
   participantIdentity,
 }: CommunityItemProps) => {
   const [isPending, startTransition] = useTransition();
+
   const color = stringToColor(participantName || "");
   const isSelf = participantName === viewerName;
-  const isHost = participantName === hostName;
+  const isHost = viewerName === hostName;
 
   const handleBlock = () => {
     if (!participantName || isSelf || !isHost) return;

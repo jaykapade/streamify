@@ -1,12 +1,13 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useIsClient } from "usehooks-ts";
+
+import { RecommendedSkeleton } from "./recommended";
+import { ToggleSkeleton } from "./toggle";
+import { FollowingSkeleton } from "./following";
 
 import { useSideBar } from "@/store/use-sidebar";
 import { cn } from "@/lib/utils";
-import { ToggleSkeleton } from "./toggle";
-import { RecommendedSkeleton } from "./recommended";
-import { useIsClient } from "usehooks-ts";
-import { FollowingSkeleton } from "./following";
 
 type WrapperProps = {
   children: React.ReactNode;

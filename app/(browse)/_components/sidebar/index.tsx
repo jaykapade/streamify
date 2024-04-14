@@ -1,9 +1,9 @@
 import React from "react";
 
 import Wrapper from "./wrapper";
+import { Toggle, ToggleSkeleton } from "./toggle";
 import { Following, FollowingSkeleton } from "./following";
 import { Recommended, RecommendedSkeleton } from "./recommended";
-import { Toggle, ToggleSkeleton } from "./toggle";
 
 import { getRecommended } from "@/lib/recommended-service";
 import { getFollowedUsers } from "@/lib/follow-service";

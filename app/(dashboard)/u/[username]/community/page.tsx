@@ -7,13 +7,13 @@ import { getBlockedUsers } from "@/lib/block-service";
 
 const CommunityPage = async () => {
   const blockedUsers = await getBlockedUsers();
-  const formattedData = blockedUsers.map((user) => ({
-    ...user,
-    userId: user.id,
-    imageUrl: user.blocked?.imageUrl,
-    username: user.blocked?.username,
-    createdAt: user.blocked?.createdAt
-      ? format(new Date(user.blocked?.createdAt), "dd/MM/yyyy")
+  const formattedData = blockedUsers.map((block) => ({
+    ...block,
+    userId: block?.blocked?.id || "",
+    imageUrl: block.blocked?.imageUrl,
+    username: block.blocked?.username,
+    createdAt: block.blocked?.createdAt
+      ? format(new Date(block.blocked?.createdAt), "dd/MM/yyyy")
       : "-",
   }));
 

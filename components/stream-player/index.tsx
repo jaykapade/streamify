@@ -15,9 +15,28 @@ import { useChatSidebar } from "@/store/use-chat-sidebar";
 import { useViewerToken } from "@/hooks/use-viewer-token";
 import { cn } from "@/lib/utils";
 
+type CustomStream = {
+  id: string;
+  name: string;
+  thumbnailUrl: string | null;
+  isLive: boolean;
+  isChatEnabled: boolean;
+  isChatDelayed: boolean;
+  isChatFollowersOnly: boolean;
+};
+
+type CustomUser = {
+  id: string;
+  username: string;
+  bio: string | null;
+  stream: CustomStream | null;
+  imageUrl: string;
+  _count: { followedBy: number };
+};
+
 type StreamPlayerProps = {
-  user: User & { stream: Stream | null; _count: { followedBy: number } };
-  stream: Stream;
+  user: CustomUser;
+  stream: CustomStream;
   isFollowing: boolean;
 };
 
